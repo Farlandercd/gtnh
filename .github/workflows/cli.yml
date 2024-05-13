@@ -59,5 +59,3 @@ jobs:
           git add .
           git commit -m "Commit changes from HydeCLI command"
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
