@@ -62,3 +62,4 @@ jobs:
           git add .
           git commit -m "Commit changes from HydeCLI command"
           git push
+          # todo fix this not triggering the build action workflow
