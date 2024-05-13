@@ -5,9 +5,25 @@ on:
   workflow_dispatch:
     inputs:
       command:
+        type: choice
         description: 'Select a command to execute'
+        options: 
+          - php hyde list
+          - php hyde build
+          - php hyde rebuild
+          - php hyde validate
+          - php hyde build:rss
+          - php hyde build:search
+          - php hyde build:sitemap
+          - php hyde make:page
+          - php hyde make:post
+          - php hyde publish:configs
+          - php hyde publish:homepage
+          - php hyde publish:views
+          - php hyde route:list
+          - php hyde torchlight:install
+          - php hyde vendor:publish
         required: true
-        default: 'php hyde list' # Default command
 
       arguments:
         description: 'Optional arguments to append to the command'
@@ -19,6 +35,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Composer install
+        run: composer install
       
       - name: Execute command
         run: |
