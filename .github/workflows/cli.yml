@@ -29,6 +29,9 @@ on:
         description: 'Optional arguments to append to the command'
         required: false
 
+permissions:
+  contents: write
+  
 jobs:
   execute_command:
     runs-on: ubuntu-latest
